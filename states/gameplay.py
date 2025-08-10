@@ -229,6 +229,6 @@ class Gameplay(BaseState):
         screen.blit(score, (constants.SCREEN_WIDTH / 2 - 300 - score.get_rect().width / 2, 40))
 
         score = self.font.render('HIGH SCORE', True, (255, 20, 20))
-        screen.blit(score, (constants.SCREEN_WIDTH / 2 - score.get_rect().width / 2, 10))
+        screen.blit(score, (constants.SCREEN_WIDTH / 2 + 300 - score.get_rect().width / 2, 10))
         score = self.font.render(str(self.high_score), True, (255, 255, 255))
-        screen.blit(score, (constants.SCREEN_WIDTH / 2 - score.get_rect().width / 2, 40))
+        screen.blit(score, (constants.SCREEN_WIDTH / 2 + 300 - score.get_rect().width / 2, 40))
