@@ -1,4 +1,5 @@
 import pygame
+import constants
 from .base_state import BaseState
 
 
@@ -14,6 +15,8 @@ class GameOver(BaseState):
             self.screen_rect.center[0], self.screen_rect.center[1] + 50)
         self.instructions_rect = self.instructions.get_rect(
             center=instructions_center)
+        self.loaded_background = pygame.image.load(constants.GAME_OVER_BACKGROUND).convert()
+        self.scaled_background = pygame.transform.scale(self.loaded_background, (constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT))
 
     def get_event(self, event):
         if event.type == pygame.QUIT:
@@ -29,6 +32,7 @@ class GameOver(BaseState):
                 self.quit = True
 
     def draw(self, surface):
-        surface.fill(pygame.Color("black"))
+        surface.blit(self.scaled_background, (0, 0))
+        # surface.fill(pygame.Color("black"))
         surface.blit(self.title, self.title_rect)
         surface.blit(self.instructions, self.instructions_rect)
