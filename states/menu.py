@@ -9,6 +9,8 @@ class Menu(BaseState):
         self.active_index = 0
         self.options = ["Start Game", "Quit Game"]
         self.next_state = "GAMEPLAY"
+        self.loaded_background = pygame.image.load(constants.MENU_BACKGROUND).convert()
+        self.scaled_background = pygame.transform.scale(self.loaded_background, (constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT))
 
     def render_text(self, index): # ACAACA
         color = pygame.Color(
@@ -39,10 +41,7 @@ class Menu(BaseState):
 
     def draw(self, surface):
         surface.fill(pygame.Color("black"))
-        background_path = "assets/images/Main_background.png"
-        loaded_background = pygame.image.load(background_path).convert()
-        loaded_background = pygame.transform.scale(loaded_background, (constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT))
-        surface.blit(loaded_background, (0, 0))
+        surface.blit(self.scaled_background, (0, 0))
         for index, option in enumerate(self.options):
             text_render = self.render_text(index)
             surface.blit(text_render, self.get_text_position(
