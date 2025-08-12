@@ -108,12 +108,12 @@ class Gameplay(BaseState):
             if self.freeze:
                 self.done = True
         elif event.type == pygame.KEYUP:
-            if event.key == pygame.K_ESCAPE:
+            if event.key == constants.QUIT_GAME_KEY:
                 self.control_points1.save_control_points()
                 self.done = True
-            if event.key == pygame.K_s:
+            if event.key == constants.SHOW_CONTROL_PATH_KEY:
                 self.show_control = not self.show_control
-            if event.key == pygame.K_SPACE:
+            if event.key == constants.SHOOTING_KEY:
                 if len(self.all_rockets) < 2:
                     self.shoot_rocket()
 
