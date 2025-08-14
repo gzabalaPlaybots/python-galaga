@@ -24,7 +24,7 @@ class Gameplay(BaseState):
     def __init__(self):
         super(Gameplay, self).__init__()
         pygame.time.set_timer(ADDENEMY, 450)
-        pygame.time.set_timer(ENEMYSHOOTS, 1000)
+        pygame.time.set_timer(ENEMYSHOOTS, constants.ENEMY_SHOOT_INTERVAL)
         pygame.time.set_timer(FREEZE, 2000)
 
         self.rect = pygame.Rect((0, 0), (80, 80))

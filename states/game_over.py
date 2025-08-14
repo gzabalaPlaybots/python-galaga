@@ -28,7 +28,7 @@ class GameOver(BaseState):
             elif event.key == pygame.K_r:
                 self.next_state = "GAMEPLAY"
                 self.done = True
-            elif event.key == pygame.K_ESCAPE:
+            elif event.key == constants.QUIT_GAME_KEY:
                 self.quit = True
 
     def draw(self, surface):
