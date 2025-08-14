@@ -10,3 +10,4 @@ GAME_OVER_BACKGROUND = './assets/images/Main_background.png'
 SHOOTING_KEY = pygame.K_SPACE
 SHOW_CONTROL_PATH_KEY = pygame.K_s
 QUIT_GAME_KEY = pygame.K_ESCAPE
+ENEMY_SHOOT_INTERVAL = 800
